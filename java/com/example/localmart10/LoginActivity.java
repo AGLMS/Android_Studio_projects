@@ -308,7 +308,7 @@ public class LoginActivity extends AppCompatActivity
 
 
         final DatabaseReference RootRef;
-        RootRef = FirebaseDatabase.getInstance().getReference();
+        //RootRef = FirebaseDatabase.getInstance().getReference();
 
 
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -317,7 +317,6 @@ public class LoginActivity extends AppCompatActivity
             {
                 if (dataSnapshot.child(parentDbName).child(phone).exists())
                 {
-                    Users usersData = dataSnapshot.child(parentDbName).child(phone).getValue(Users.class);
 
                     if (usersData.getPhone().equals(phone))
                     {
